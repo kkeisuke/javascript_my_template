@@ -1,6 +1,6 @@
-﻿(function(window, document, undefined){
+(function(window, document, undefined){
 
-    var inherit = (function(){
+   /* var inherit = (function(){
         var F = function(){};
         return function(C, P){
             F.prototype = P.prototype;
@@ -8,7 +8,7 @@
             C.__super__ = P.prototype;
             C.prototype.constructor = C;
         };
-    }());
+    }()); */
 
     // 継承
     // inherit(MyClass, Parent);
@@ -28,22 +28,21 @@
     }
 
     /**
-     * クラスメンバー
+     * クラスメンバ
      */
-    //MyClass.member = "";
-    //MyClass.MEMBER = "";
+    // MyClass.member = "Class.member";
+    // MyClass.MEMBER = "Class.MEMBER";
 
     /**
      * プライベートメンバ
      */
-    MyClass.prototype = (function(){
-        // var member = "";
-        return {
-            /* getMember:function(){
-                return member;
-            } */
+   /*  MyClass.prototype = (function(){
+        var member = "private";
+        MyClass.prototype.getMember = function(){
+            return member;
         };
-    }());
+        return MyClass.prototype;
+    }()); */
 
     /**
      * インスタンスメソッド
