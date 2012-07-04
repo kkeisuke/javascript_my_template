@@ -1,6 +1,9 @@
-# @NameSpaces ?= {}
+###
+if window.NameSpaces == undefined
+    window.NameSpaces = {}
+###
 
-# @NameSpaces.MyClass = 
+# NameSpaces.MyClass = 
 class MyClass # extends MyParent
 
     # クラスメンバ

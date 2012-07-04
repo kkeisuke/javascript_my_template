@@ -1,6 +1,10 @@
 (function(window, document, undefined){
 
-   /* var inherit = (function(){
+    /* if(window.NS === undefined){
+        window.NS = {};
+    } */
+
+    /* var inherit = (function(){
         var F = function(){};
         return function(C, P){
             F.prototype = P.prototype;
@@ -10,14 +14,11 @@
         };
     }()); */
 
-    // 継承
-    // inherit(MyClass, Parent);
-
     /**
      * クラス
      * @param {Object} option オプション
      */
-    // NameSpaces.MyClass = function(option){
+    // NS.MyClass = function(option){
     function MyClass(option){
         // MyClass.__super__.constructor.call(this);
         this.option = {
@@ -25,7 +26,10 @@
         };
         this._extends(option);
         this._init();
-    }
+    }/* ; */
+
+    // 継承
+    // inherit(MyClass, Parent);
 
     /**
      * クラスメンバ
@@ -36,7 +40,7 @@
     /**
      * プライベートメンバ
      */
-   /*  MyClass.prototype = (function(){
+    /*  MyClass.prototype = (function(){
         var member = "private";
         MyClass.prototype.getMember = function(){
             return member;
@@ -50,7 +54,8 @@
     // オプションを継承
     MyClass.prototype._extends = function(option){
         if(option === undefined) { return; }
-        for(var param in option){
+        var param;
+        for(param in option){
             this.option[param] = option[param];
         }
     };
