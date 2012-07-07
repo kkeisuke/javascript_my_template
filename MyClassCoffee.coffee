@@ -12,21 +12,18 @@ class MyClass # extends MyParent
     @MEMBER = "@MEMBER"
     ###
 
-    # プライベートメンバ
-    ###
-    @prototype:(()=>
-        member = "private"
-        @prototype.getMember = ()->
-            member
-        @prototype
-    )()
-    ###
-
     constructor:(option)->
         # super()
         @option = {}
         @_extends option
         @_init()
+
+    # プライベートメンバ
+    ###
+    member = "private"
+    getMember:->
+        member
+    ###
 
     # オプションを継承
     _extends:(option)->

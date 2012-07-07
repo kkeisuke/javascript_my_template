@@ -15,20 +15,18 @@ if window.NameSpaces == undefined
         @MEMBER = "@MEMBER"
     */
 
-    /*
-        @prototype:(()=>
-            member = "private"
-            @prototype.getMember = ()->
-                member
-            @prototype
-        )()
-    */
-
     function MyClass(option) {
       this.option = {};
       this._extends(option);
       this._init();
     }
+
+    /*
+        member = "private"
+        getMember:->
+            member
+    */
+
 
     MyClass.prototype._extends = function(option) {
       var param;
