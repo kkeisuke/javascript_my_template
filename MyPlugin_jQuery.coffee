@@ -1,28 +1,32 @@
-class $.pluginName
+(($, window, document)->
 
-    # クラスメンバ
-    # @member = "@member"
-    # @MEMBER = "@MEMBER"
+    class $.pluginName
 
-    constructor:($target)->
-        @$target = $target
-        @option = {}
+        # クラスメンバ
+        # @member = "@member"
+        # @MEMBER = "@MEMBER"
 
-    # インスタンスメソッド
-    $.extend pluginName.prototype,
-        # オプションを継承
-        _setOption:(option)->
-            if option == undefined
-                return
-            $.extend @option, option
-            @
-        _init:->
-            @
-        # ここに追加
+        constructor:($target)->
+            @$target = $target
+            @option = {}
 
-    $.fn.pluginName = (option)->
-        @each ->
-            instance = new pluginName $ @
-            instance._setOption option
-            instance._init()
-            @
+        # インスタンスメソッド
+        $.extend pluginName.prototype,
+            # オプションを継承
+            _setOption:(option)->
+                if option == undefined
+                    return
+                $.extend @option, option
+                @
+            _init:->
+                @
+            # ここに追加
+
+        $.fn.pluginName = (option)->
+            @each ->
+                instance = new pluginName $ @
+                instance._setOption option
+                instance._init()
+                @
+
+) jQuery, @, @document

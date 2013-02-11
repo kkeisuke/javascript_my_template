@@ -1,39 +1,43 @@
-###
-if window.NameSpaces == undefined
-    window.NameSpaces = {}
-###
+((window, document)->
 
-# NameSpaces.MyClass = 
-class MyClass # extends MyParent
-
-    # クラスメンバ
     ###
-    @member = "@member"
-    @MEMBER = "@MEMBER"
+    if window.NameSpaces == undefined
+        window.NameSpaces = {}
     ###
 
-    constructor:(option)->
-        # super()
-        @option = {}
-        @_extends option
-        @_init()
+    # NameSpaces.MyClass = 
+    class MyClass # extends MyParent
 
-    # プライベートメンバ
-    ###
-    member = "private"
-    getMember:->
-        member
-    ###
+        # クラスメンバ
+        ###
+        @member = "@member"
+        @MEMBER = "@MEMBER"
+        ###
 
-    # オプションを継承
-    _extends:(option)->
-        if option is undefined
-            return
-        for param of option
-            @option[param] = option[param]
-        @
+        constructor:(option)->
+            # super()
+            @option = {}
+            @_extends option
+            @_init()
 
-    _init:->
-        @
+        # プライベートメンバ
+        ###
+        member = "private"
+        getMember:->
+            member
+        ###
 
-# instance = new MyClass()
+        # オプションを継承
+        _extends:(option)->
+            if option is undefined
+                return
+            for param of option
+                @option[param] = option[param]
+            @
+
+        _init:->
+            @
+
+    # instance = new MyClass()
+
+) @, @document
